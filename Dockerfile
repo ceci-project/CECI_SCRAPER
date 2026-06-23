@@ -45,9 +45,10 @@ RUN mkdir -p /app/logs /app/data /app/healthcheck \
     && chown -R scraper:scraper /app
 
 # Copy entrypoint, health check, and randomized sync scripts with execute permissions
-COPY --chmod=755 docker/docker-entrypoint.sh /usr/local/bin/
-COPY --chmod=755 docker/healthcheck.sh /usr/local/bin/
-COPY --chmod=755 docker/randomized_sync.sh /app/docker/
+COPY docker/docker-entrypoint.sh /usr/local/bin/
+COPY docker/healthcheck.sh /usr/local/bin/
+COPY docker/randomized_sync.sh /app/docker/
+RUN chmod 755 /usr/local/bin/docker-entrypoint.sh /usr/local/bin/healthcheck.sh /app/docker/randomized_sync.sh
 
 # Setup cron job for daily sync at 02:00 AM
 # Using /etc/cron.d/ format - cron daemon reads these directly
