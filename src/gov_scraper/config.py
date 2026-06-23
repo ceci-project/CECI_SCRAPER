@@ -85,7 +85,7 @@ def get_pm_for_decision(gov_num: int, decision_date: str = None) -> str:
 
 # Gemini Configuration
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
-GEMINI_MODEL = os.getenv('GEMINI_MODEL', 'gemini-2.0-flash')
+GEMINI_MODEL = os.getenv('GEMINI_MODEL', 'gemini-2.5-flash')
 
 # AI Processing Configuration
 USE_UNIFIED_AI = os.getenv('USE_UNIFIED_AI', 'true').lower() == 'true'
