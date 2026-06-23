@@ -99,6 +99,7 @@ def make_openai_request_with_retry(prompt: str, max_tokens: int = 500) -> str:
                     system_instruction=SYSTEM_INSTRUCTION,
                     max_output_tokens=max_tokens,
                     temperature=0.3,
+                    thinking_config=types.ThinkingConfig(thinking_budget=0),  # Disable thinking — saves token budget
                 ),
             )
 

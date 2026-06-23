@@ -118,6 +118,7 @@ class UnifiedAIProcessor:
                         system_instruction="אתה מנתח מקצועי של החלטות ממשלה ישראליות. החזר תמיד JSON מובנה ומדויק.",
                         max_output_tokens=max_tokens,
                         temperature=0.1,  # Low temperature for consistency
+                        thinking_config=types.ThinkingConfig(thinking_budget=0),  # Disable thinking — saves token budget for JSON output
                     ),
                 )
 
